@@ -1,0 +1,679 @@
+2021-10-23 13:02:21,891:INFO: 
+Running with the following configs:
+ >> seed : 2021
+ >> ex_index : 2021-10-23_13-02-19
+ >> corpus_type : WebNLG
+ >> device_id : 0
+ >> epoch_num : 150
+ >> multi_gpu : False
+ >> restore_file : None
+ >> corres_threshold : 0.5
+ >> rel_threshold : 0.5
+ >> emb_fusion : concat
+ >> ensure_cross : none
+ >> ensure_rel : hgat_astoken_relemb
+ >> ensure_corres : default
+ >> use_symmetries : none
+ >> sent_rels : none
+ >> sent_attn : none
+ >> num_negs : 4
+
+
+2021-10-23 13:02:21,891:INFO: Params: 
+ >> bert_model_dir: ../Bert/bert-base-cased
+ >> n_gpu: 2
+ >> max_seq_length: 100
+ >> data_cache: False
+ >> train_batch_size: 8
+ >> val_batch_size: 24
+ >> test_batch_size: 64
+ >> seq_tag_size: 3
+ >> rel_num: 216
+ >> min_epoch_num: 20
+ >> patience: 1e-05
+ >> patience_num: 100
+ >> fin_tuning_lr: 0.0001
+ >> downs_en_lr: 0.001
+ >> clip_grad: 2.0
+ >> drop_prob: 0.3
+ >> weight_decay_rate: 0.01
+ >> warmup_prop: 0.1
+ >> gradient_accumulation_steps: 2
+
+2021-10-23 13:02:21,892:INFO: Model type:
+2021-10-23 13:02:21,892:INFO: device: cuda
+2021-10-23 13:02:21,892:INFO: Load pre-train model weights...
+2021-10-23 13:02:22,890:INFO: -done
+2021-10-23 13:02:22,890:INFO: Starting training for 150 epoch(s)
+2021-10-23 13:02:29,654:INFO: Epoch 1/150
+2021-10-23 13:07:44,226:INFO: loss=0.413, loss_seq=0.257, loss_mat=0.026, loss_rel=0.130
+2021-10-23 13:07:46,691:INFO: - Val metrics:
+correct_num: 247.000; predict_num: 684.000; gold_num: 1223.000; precision: 0.361; recall: 0.202; f1: 0.259
+2021-10-23 13:07:49,002:INFO: - Found new best F1
+2021-10-23 13:07:49,002:INFO: Epoch 2/150
+2021-10-23 13:13:03,605:INFO: loss=0.118, loss_seq=0.087, loss_mat=0.004, loss_rel=0.027
+2021-10-23 13:13:06,098:INFO: - Val metrics:
+correct_num: 578.000; predict_num: 884.000; gold_num: 1223.000; precision: 0.654; recall: 0.473; f1: 0.549
+2021-10-23 13:13:15,335:INFO: - Found new best F1
+2021-10-23 13:13:15,335:INFO: Epoch 3/150
+2021-10-23 13:18:31,406:INFO: loss=0.064, loss_seq=0.046, loss_mat=0.002, loss_rel=0.015
+2021-10-23 13:18:33,924:INFO: - Val metrics:
+correct_num: 721.000; predict_num: 1001.000; gold_num: 1223.000; precision: 0.720; recall: 0.590; f1: 0.648
+2021-10-23 13:18:43,212:INFO: - Found new best F1
+2021-10-23 13:18:43,212:INFO: Epoch 4/150
+2021-10-23 13:24:02,840:INFO: loss=0.044, loss_seq=0.032, loss_mat=0.002, loss_rel=0.011
+2021-10-23 13:24:05,346:INFO: - Val metrics:
+correct_num: 798.000; predict_num: 1056.000; gold_num: 1223.000; precision: 0.756; recall: 0.652; f1: 0.700
+2021-10-23 13:24:14,168:INFO: - Found new best F1
+2021-10-23 13:24:14,169:INFO: Epoch 5/150
+2021-10-23 13:29:29,921:INFO: loss=0.035, loss_seq=0.026, loss_mat=0.001, loss_rel=0.008
+2021-10-23 13:29:32,438:INFO: - Val metrics:
+correct_num: 885.000; predict_num: 1138.000; gold_num: 1223.000; precision: 0.778; recall: 0.724; f1: 0.750
+2021-10-23 13:29:41,387:INFO: - Found new best F1
+2021-10-23 13:29:41,388:INFO: Epoch 6/150
+2021-10-23 13:34:55,725:INFO: loss=0.031, loss_seq=0.023, loss_mat=0.001, loss_rel=0.006
+2021-10-23 13:34:58,239:INFO: - Val metrics:
+correct_num: 896.000; predict_num: 1109.000; gold_num: 1223.000; precision: 0.808; recall: 0.733; f1: 0.768
+2021-10-23 13:35:07,829:INFO: - Found new best F1
+2021-10-23 13:35:07,830:INFO: Epoch 7/150
+2021-10-23 13:40:21,782:INFO: loss=0.030, loss_seq=0.023, loss_mat=0.001, loss_rel=0.006
+2021-10-23 13:40:24,296:INFO: - Val metrics:
+correct_num: 878.000; predict_num: 1095.000; gold_num: 1223.000; precision: 0.802; recall: 0.718; f1: 0.758
+2021-10-23 13:40:29,489:INFO: Epoch 8/150
+2021-10-23 13:45:44,360:INFO: loss=0.031, loss_seq=0.025, loss_mat=0.001, loss_rel=0.005
+2021-10-23 13:45:46,873:INFO: - Val metrics:
+correct_num: 895.000; predict_num: 1174.000; gold_num: 1223.000; precision: 0.762; recall: 0.732; f1: 0.747
+2021-10-23 13:45:52,145:INFO: Epoch 9/150
+2021-10-23 13:51:06,027:INFO: loss=0.031, loss_seq=0.025, loss_mat=0.001, loss_rel=0.005
+2021-10-23 13:51:08,528:INFO: - Val metrics:
+correct_num: 919.000; predict_num: 1185.000; gold_num: 1223.000; precision: 0.776; recall: 0.751; f1: 0.763
+2021-10-23 13:51:13,968:INFO: Epoch 10/150
+2021-10-23 13:56:29,353:INFO: loss=0.031, loss_seq=0.025, loss_mat=0.001, loss_rel=0.005
+2021-10-23 13:56:31,877:INFO: - Val metrics:
+correct_num: 927.000; predict_num: 1161.000; gold_num: 1223.000; precision: 0.798; recall: 0.758; f1: 0.778
+2021-10-23 13:56:41,369:INFO: - Found new best F1
+2021-10-23 13:56:41,369:INFO: Epoch 11/150
+2021-10-23 14:02:00,794:INFO: loss=0.025, loss_seq=0.020, loss_mat=0.001, loss_rel=0.004
+2021-10-23 14:02:03,302:INFO: - Val metrics:
+correct_num: 889.000; predict_num: 1088.000; gold_num: 1223.000; precision: 0.817; recall: 0.727; f1: 0.769
+2021-10-23 14:02:08,333:INFO: Epoch 12/150
+2021-10-23 14:07:22,808:INFO: loss=0.035, loss_seq=0.029, loss_mat=0.001, loss_rel=0.005
+2021-10-23 14:07:25,421:INFO: - Val metrics:
+correct_num: 891.000; predict_num: 1137.000; gold_num: 1223.000; precision: 0.784; recall: 0.729; f1: 0.755
+2021-10-23 14:07:30,478:INFO: Epoch 13/150
+2021-10-23 14:12:45,862:INFO: loss=0.029, loss_seq=0.023, loss_mat=0.001, loss_rel=0.005
+2021-10-23 14:12:48,365:INFO: - Val metrics:
+correct_num: 928.000; predict_num: 1167.000; gold_num: 1223.000; precision: 0.795; recall: 0.759; f1: 0.777
+2021-10-23 14:12:53,495:INFO: Epoch 14/150
+2021-10-23 14:18:07,724:INFO: loss=0.029, loss_seq=0.024, loss_mat=0.001, loss_rel=0.004
+2021-10-23 14:18:10,224:INFO: - Val metrics:
+correct_num: 905.000; predict_num: 1128.000; gold_num: 1223.000; precision: 0.802; recall: 0.740; f1: 0.770
+2021-10-23 14:18:15,392:INFO: Epoch 15/150
+2021-10-23 14:23:29,351:INFO: loss=0.033, loss_seq=0.027, loss_mat=0.001, loss_rel=0.005
+2021-10-23 14:23:31,855:INFO: - Val metrics:
+correct_num: 913.000; predict_num: 1121.000; gold_num: 1223.000; precision: 0.814; recall: 0.747; f1: 0.779
+2021-10-23 14:23:41,231:INFO: - Found new best F1
+2021-10-23 14:23:41,231:INFO: Epoch 16/150
+2021-10-23 14:28:56,616:INFO: loss=0.041, loss_seq=0.034, loss_mat=0.001, loss_rel=0.006
+2021-10-23 14:28:59,107:INFO: - Val metrics:
+correct_num: 912.000; predict_num: 1145.000; gold_num: 1223.000; precision: 0.797; recall: 0.746; f1: 0.770
+2021-10-23 14:29:04,192:INFO: Epoch 17/150
+2021-10-23 14:34:20,631:INFO: loss=0.024, loss_seq=0.019, loss_mat=0.001, loss_rel=0.004
+2021-10-23 14:34:23,142:INFO: - Val metrics:
+correct_num: 929.000; predict_num: 1135.000; gold_num: 1223.000; precision: 0.819; recall: 0.760; f1: 0.788
+2021-10-23 14:34:32,719:INFO: - Found new best F1
+2021-10-23 14:34:32,719:INFO: Epoch 18/150
+2021-10-23 14:39:51,909:INFO: loss=0.028, loss_seq=0.022, loss_mat=0.001, loss_rel=0.005
+2021-10-23 14:39:54,407:INFO: - Val metrics:
+correct_num: 948.000; predict_num: 1150.000; gold_num: 1223.000; precision: 0.824; recall: 0.775; f1: 0.799
+2021-10-23 14:40:03,586:INFO: - Found new best F1
+2021-10-23 14:40:03,586:INFO: Epoch 19/150
+2021-10-23 14:45:18,343:INFO: loss=0.023, loss_seq=0.019, loss_mat=0.001, loss_rel=0.004
+2021-10-23 14:45:20,853:INFO: - Val metrics:
+correct_num: 999.000; predict_num: 1203.000; gold_num: 1223.000; precision: 0.830; recall: 0.817; f1: 0.824
+2021-10-23 14:45:30,443:INFO: - Found new best F1
+2021-10-23 14:45:30,443:INFO: Epoch 20/150
+2021-10-23 14:50:44,878:INFO: loss=0.038, loss_seq=0.031, loss_mat=0.002, loss_rel=0.005
+2021-10-23 14:50:47,367:INFO: - Val metrics:
+correct_num: 696.000; predict_num: 897.000; gold_num: 1223.000; precision: 0.776; recall: 0.569; f1: 0.657
+2021-10-23 14:50:52,456:INFO: Epoch 21/150
+2021-10-23 14:56:07,327:INFO: loss=0.033, loss_seq=0.027, loss_mat=0.001, loss_rel=0.004
+2021-10-23 14:56:09,811:INFO: - Val metrics:
+correct_num: 939.000; predict_num: 1120.000; gold_num: 1223.000; precision: 0.838; recall: 0.768; f1: 0.802
+2021-10-23 14:56:14,985:INFO: Epoch 22/150
+2021-10-23 15:01:29,863:INFO: loss=0.028, loss_seq=0.023, loss_mat=0.001, loss_rel=0.004
+2021-10-23 15:01:32,347:INFO: - Val metrics:
+correct_num: 905.000; predict_num: 1097.000; gold_num: 1223.000; precision: 0.825; recall: 0.740; f1: 0.780
+2021-10-23 15:01:37,416:INFO: Epoch 23/150
+2021-10-23 15:06:52,653:INFO: loss=0.024, loss_seq=0.020, loss_mat=0.001, loss_rel=0.004
+2021-10-23 15:06:55,140:INFO: - Val metrics:
+correct_num: 966.000; predict_num: 1161.000; gold_num: 1223.000; precision: 0.832; recall: 0.790; f1: 0.810
+2021-10-23 15:07:00,259:INFO: Epoch 24/150
+2021-10-23 15:12:16,057:INFO: loss=0.020, loss_seq=0.017, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:12:18,549:INFO: - Val metrics:
+correct_num: 960.000; predict_num: 1159.000; gold_num: 1223.000; precision: 0.828; recall: 0.785; f1: 0.806
+2021-10-23 15:12:23,807:INFO: Epoch 25/150
+2021-10-23 15:17:42,894:INFO: loss=0.022, loss_seq=0.019, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:17:45,394:INFO: - Val metrics:
+correct_num: 943.000; predict_num: 1149.000; gold_num: 1223.000; precision: 0.821; recall: 0.771; f1: 0.795
+2021-10-23 15:17:50,504:INFO: Epoch 26/150
+2021-10-23 15:23:04,639:INFO: loss=0.024, loss_seq=0.020, loss_mat=0.001, loss_rel=0.004
+2021-10-23 15:23:07,124:INFO: - Val metrics:
+correct_num: 925.000; predict_num: 1125.000; gold_num: 1223.000; precision: 0.822; recall: 0.756; f1: 0.788
+2021-10-23 15:23:12,196:INFO: Epoch 27/150
+2021-10-23 15:28:26,566:INFO: loss=0.027, loss_seq=0.023, loss_mat=0.001, loss_rel=0.004
+2021-10-23 15:28:29,059:INFO: - Val metrics:
+correct_num: 965.000; predict_num: 1153.000; gold_num: 1223.000; precision: 0.837; recall: 0.789; f1: 0.812
+2021-10-23 15:28:34,157:INFO: Epoch 28/150
+2021-10-23 15:33:48,720:INFO: loss=0.020, loss_seq=0.017, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:33:51,226:INFO: - Val metrics:
+correct_num: 962.000; predict_num: 1163.000; gold_num: 1223.000; precision: 0.827; recall: 0.787; f1: 0.806
+2021-10-23 15:33:56,345:INFO: Epoch 29/150
+2021-10-23 15:39:10,850:INFO: loss=0.022, loss_seq=0.017, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:39:13,354:INFO: - Val metrics:
+correct_num: 987.000; predict_num: 1213.000; gold_num: 1223.000; precision: 0.814; recall: 0.807; f1: 0.810
+2021-10-23 15:39:18,440:INFO: Epoch 30/150
+2021-10-23 15:44:32,923:INFO: loss=0.016, loss_seq=0.013, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:44:35,410:INFO: - Val metrics:
+correct_num: 969.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.820; recall: 0.792; f1: 0.806
+2021-10-23 15:44:40,516:INFO: Epoch 31/150
+2021-10-23 15:49:56,087:INFO: loss=0.019, loss_seq=0.016, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:49:58,597:INFO: - Val metrics:
+correct_num: 946.000; predict_num: 1136.000; gold_num: 1223.000; precision: 0.833; recall: 0.774; f1: 0.802
+2021-10-23 15:50:03,871:INFO: Epoch 32/150
+2021-10-23 15:55:24,130:INFO: loss=0.017, loss_seq=0.014, loss_mat=0.001, loss_rel=0.003
+2021-10-23 15:55:26,625:INFO: - Val metrics:
+correct_num: 978.000; predict_num: 1157.000; gold_num: 1223.000; precision: 0.845; recall: 0.800; f1: 0.822
+2021-10-23 15:55:31,865:INFO: Epoch 33/150
+2021-10-23 16:00:47,033:INFO: loss=0.018, loss_seq=0.015, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:00:49,527:INFO: - Val metrics:
+correct_num: 982.000; predict_num: 1135.000; gold_num: 1223.000; precision: 0.865; recall: 0.803; f1: 0.833
+2021-10-23 16:00:58,847:INFO: - Found new best F1
+2021-10-23 16:00:58,847:INFO: Epoch 34/150
+2021-10-23 16:06:13,598:INFO: loss=0.020, loss_seq=0.016, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:06:16,085:INFO: - Val metrics:
+correct_num: 965.000; predict_num: 1145.000; gold_num: 1223.000; precision: 0.843; recall: 0.789; f1: 0.815
+2021-10-23 16:06:21,191:INFO: Epoch 35/150
+2021-10-23 16:11:36,651:INFO: loss=0.018, loss_seq=0.015, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:11:39,131:INFO: - Val metrics:
+correct_num: 975.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.823; recall: 0.797; f1: 0.810
+2021-10-23 16:11:44,378:INFO: Epoch 36/150
+2021-10-23 16:17:00,916:INFO: loss=0.016, loss_seq=0.013, loss_mat=0.001, loss_rel=0.002
+2021-10-23 16:17:03,410:INFO: - Val metrics:
+correct_num: 997.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.842; recall: 0.815; f1: 0.828
+2021-10-23 16:17:08,547:INFO: Epoch 37/150
+2021-10-23 16:22:24,951:INFO: loss=0.016, loss_seq=0.012, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:22:27,435:INFO: - Val metrics:
+correct_num: 927.000; predict_num: 1128.000; gold_num: 1223.000; precision: 0.822; recall: 0.758; f1: 0.789
+2021-10-23 16:22:32,501:INFO: Epoch 38/150
+2021-10-23 16:27:49,635:INFO: loss=0.019, loss_seq=0.016, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:27:52,133:INFO: - Val metrics:
+correct_num: 950.000; predict_num: 1155.000; gold_num: 1223.000; precision: 0.823; recall: 0.777; f1: 0.799
+2021-10-23 16:27:57,432:INFO: Epoch 39/150
+2021-10-23 16:33:18,482:INFO: loss=0.017, loss_seq=0.014, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:33:20,963:INFO: - Val metrics:
+correct_num: 976.000; predict_num: 1162.000; gold_num: 1223.000; precision: 0.840; recall: 0.798; f1: 0.818
+2021-10-23 16:33:26,139:INFO: Epoch 40/150
+2021-10-23 16:38:42,367:INFO: loss=0.017, loss_seq=0.014, loss_mat=0.001, loss_rel=0.003
+2021-10-23 16:38:44,853:INFO: - Val metrics:
+correct_num: 970.000; predict_num: 1136.000; gold_num: 1223.000; precision: 0.854; recall: 0.793; f1: 0.822
+2021-10-23 16:38:49,878:INFO: Epoch 41/150
+2021-10-23 16:44:06,146:INFO: loss=0.013, loss_seq=0.010, loss_mat=0.001, loss_rel=0.002
+2021-10-23 16:44:08,639:INFO: - Val metrics:
+correct_num: 989.000; predict_num: 1195.000; gold_num: 1223.000; precision: 0.828; recall: 0.809; f1: 0.818
+2021-10-23 16:44:13,721:INFO: Epoch 42/150
+2021-10-23 16:49:29,679:INFO: loss=0.012, loss_seq=0.009, loss_mat=0.000, loss_rel=0.002
+2021-10-23 16:49:32,164:INFO: - Val metrics:
+correct_num: 1009.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.854; recall: 0.825; f1: 0.839
+2021-10-23 16:49:41,371:INFO: - Found new best F1
+2021-10-23 16:49:41,371:INFO: Epoch 43/150
+2021-10-23 16:54:56,704:INFO: loss=0.013, loss_seq=0.010, loss_mat=0.000, loss_rel=0.002
+2021-10-23 16:54:59,193:INFO: - Val metrics:
+correct_num: 995.000; predict_num: 1166.000; gold_num: 1223.000; precision: 0.853; recall: 0.814; f1: 0.833
+2021-10-23 16:55:04,358:INFO: Epoch 44/150
+2021-10-23 17:00:20,268:INFO: loss=0.021, loss_seq=0.017, loss_mat=0.001, loss_rel=0.003
+2021-10-23 17:00:22,751:INFO: - Val metrics:
+correct_num: 894.000; predict_num: 1123.000; gold_num: 1223.000; precision: 0.796; recall: 0.731; f1: 0.762
+2021-10-23 17:00:27,897:INFO: Epoch 45/150
+2021-10-23 17:05:44,010:INFO: loss=0.019, loss_seq=0.015, loss_mat=0.001, loss_rel=0.003
+2021-10-23 17:05:46,503:INFO: - Val metrics:
+correct_num: 926.000; predict_num: 1137.000; gold_num: 1223.000; precision: 0.814; recall: 0.757; f1: 0.785
+2021-10-23 17:05:51,798:INFO: Epoch 46/150
+2021-10-23 17:11:11,168:INFO: loss=0.014, loss_seq=0.011, loss_mat=0.001, loss_rel=0.003
+2021-10-23 17:11:13,647:INFO: - Val metrics:
+correct_num: 996.000; predict_num: 1188.000; gold_num: 1223.000; precision: 0.838; recall: 0.814; f1: 0.826
+2021-10-23 17:11:18,782:INFO: Epoch 47/150
+2021-10-23 17:16:34,873:INFO: loss=0.012, loss_seq=0.010, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:16:37,368:INFO: - Val metrics:
+correct_num: 1006.000; predict_num: 1194.000; gold_num: 1223.000; precision: 0.843; recall: 0.823; f1: 0.832
+2021-10-23 17:16:42,611:INFO: Epoch 48/150
+2021-10-23 17:21:57,869:INFO: loss=0.018, loss_seq=0.015, loss_mat=0.001, loss_rel=0.002
+2021-10-23 17:22:00,354:INFO: - Val metrics:
+correct_num: 981.000; predict_num: 1197.000; gold_num: 1223.000; precision: 0.820; recall: 0.802; f1: 0.811
+2021-10-23 17:22:05,601:INFO: Epoch 49/150
+2021-10-23 17:27:21,895:INFO: loss=0.010, loss_seq=0.008, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:27:24,381:INFO: - Val metrics:
+correct_num: 1007.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.851; recall: 0.823; f1: 0.837
+2021-10-23 17:27:29,879:INFO: Epoch 50/150
+2021-10-23 17:32:46,924:INFO: loss=0.012, loss_seq=0.010, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:32:49,401:INFO: - Val metrics:
+correct_num: 1002.000; predict_num: 1175.000; gold_num: 1223.000; precision: 0.853; recall: 0.819; f1: 0.836
+2021-10-23 17:32:54,755:INFO: Epoch 51/150
+2021-10-23 17:38:10,397:INFO: loss=0.011, loss_seq=0.008, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:38:12,881:INFO: - Val metrics:
+correct_num: 1018.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.868; recall: 0.832; f1: 0.850
+2021-10-23 17:38:22,189:INFO: - Found new best F1
+2021-10-23 17:38:22,189:INFO: Epoch 52/150
+2021-10-23 17:43:39,295:INFO: loss=0.009, loss_seq=0.007, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:43:41,796:INFO: - Val metrics:
+correct_num: 1038.000; predict_num: 1183.000; gold_num: 1223.000; precision: 0.877; recall: 0.849; f1: 0.863
+2021-10-23 17:43:51,116:INFO: - Found new best F1
+2021-10-23 17:43:51,116:INFO: Epoch 53/150
+2021-10-23 17:49:12,533:INFO: loss=0.011, loss_seq=0.009, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:49:15,006:INFO: - Val metrics:
+correct_num: 990.000; predict_num: 1128.000; gold_num: 1223.000; precision: 0.878; recall: 0.809; f1: 0.842
+2021-10-23 17:49:20,131:INFO: Epoch 54/150
+2021-10-23 17:54:35,133:INFO: loss=0.010, loss_seq=0.008, loss_mat=0.000, loss_rel=0.002
+2021-10-23 17:54:37,609:INFO: - Val metrics:
+correct_num: 997.000; predict_num: 1141.000; gold_num: 1223.000; precision: 0.874; recall: 0.815; f1: 0.843
+2021-10-23 17:54:42,647:INFO: Epoch 55/150
+2021-10-23 17:59:58,308:INFO: loss=0.010, loss_seq=0.008, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:00:00,811:INFO: - Val metrics:
+correct_num: 976.000; predict_num: 1193.000; gold_num: 1223.000; precision: 0.818; recall: 0.798; f1: 0.808
+2021-10-23 18:00:05,844:INFO: Epoch 56/150
+2021-10-23 18:05:22,070:INFO: loss=0.013, loss_seq=0.010, loss_mat=0.000, loss_rel=0.002
+2021-10-23 18:05:24,558:INFO: - Val metrics:
+correct_num: 1012.000; predict_num: 1179.000; gold_num: 1223.000; precision: 0.858; recall: 0.827; f1: 0.843
+2021-10-23 18:05:29,660:INFO: Epoch 57/150
+2021-10-23 18:10:44,392:INFO: loss=0.008, loss_seq=0.006, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:10:46,880:INFO: - Val metrics:
+correct_num: 1012.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.857; recall: 0.827; f1: 0.842
+2021-10-23 18:10:52,108:INFO: Epoch 58/150
+2021-10-23 18:16:07,660:INFO: loss=0.009, loss_seq=0.007, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:16:10,136:INFO: - Val metrics:
+correct_num: 1005.000; predict_num: 1163.000; gold_num: 1223.000; precision: 0.864; recall: 0.822; f1: 0.842
+2021-10-23 18:16:15,237:INFO: Epoch 59/150
+2021-10-23 18:21:32,526:INFO: loss=0.009, loss_seq=0.007, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:21:35,026:INFO: - Val metrics:
+correct_num: 1003.000; predict_num: 1169.000; gold_num: 1223.000; precision: 0.858; recall: 0.820; f1: 0.839
+2021-10-23 18:21:40,135:INFO: Epoch 60/150
+2021-10-23 18:26:59,670:INFO: loss=0.010, loss_seq=0.008, loss_mat=0.000, loss_rel=0.002
+2021-10-23 18:27:02,150:INFO: - Val metrics:
+correct_num: 1004.000; predict_num: 1168.000; gold_num: 1223.000; precision: 0.860; recall: 0.821; f1: 0.840
+2021-10-23 18:27:07,130:INFO: Epoch 61/150
+2021-10-23 18:32:23,285:INFO: loss=0.010, loss_seq=0.008, loss_mat=0.000, loss_rel=0.002
+2021-10-23 18:32:25,759:INFO: - Val metrics:
+correct_num: 992.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.838; recall: 0.811; f1: 0.824
+2021-10-23 18:32:30,973:INFO: Epoch 62/150
+2021-10-23 18:37:47,386:INFO: loss=0.008, loss_seq=0.007, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:37:49,889:INFO: - Val metrics:
+correct_num: 979.000; predict_num: 1157.000; gold_num: 1223.000; precision: 0.846; recall: 0.800; f1: 0.823
+2021-10-23 18:37:55,259:INFO: Epoch 63/150
+2021-10-23 18:43:09,887:INFO: loss=0.006, loss_seq=0.005, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:43:12,460:INFO: - Val metrics:
+correct_num: 1025.000; predict_num: 1196.000; gold_num: 1223.000; precision: 0.857; recall: 0.838; f1: 0.847
+2021-10-23 18:43:17,668:INFO: Epoch 64/150
+2021-10-23 18:48:33,432:INFO: loss=0.008, loss_seq=0.006, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:48:35,937:INFO: - Val metrics:
+correct_num: 1007.000; predict_num: 1183.000; gold_num: 1223.000; precision: 0.851; recall: 0.823; f1: 0.837
+2021-10-23 18:48:41,024:INFO: Epoch 65/150
+2021-10-23 18:53:56,997:INFO: loss=0.008, loss_seq=0.007, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:53:59,477:INFO: - Val metrics:
+correct_num: 984.000; predict_num: 1145.000; gold_num: 1223.000; precision: 0.859; recall: 0.805; f1: 0.831
+2021-10-23 18:54:04,590:INFO: Epoch 66/150
+2021-10-23 18:59:21,166:INFO: loss=0.008, loss_seq=0.006, loss_mat=0.000, loss_rel=0.001
+2021-10-23 18:59:23,663:INFO: - Val metrics:
+correct_num: 1013.000; predict_num: 1164.000; gold_num: 1223.000; precision: 0.870; recall: 0.828; f1: 0.849
+2021-10-23 18:59:28,863:INFO: Epoch 67/150
+2021-10-23 19:04:48,337:INFO: loss=0.007, loss_seq=0.005, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:04:50,821:INFO: - Val metrics:
+correct_num: 1003.000; predict_num: 1156.000; gold_num: 1223.000; precision: 0.868; recall: 0.820; f1: 0.843
+2021-10-23 19:04:55,932:INFO: Epoch 68/150
+2021-10-23 19:10:11,401:INFO: loss=0.006, loss_seq=0.005, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:10:13,880:INFO: - Val metrics:
+correct_num: 1005.000; predict_num: 1149.000; gold_num: 1223.000; precision: 0.875; recall: 0.822; f1: 0.847
+2021-10-23 19:10:18,930:INFO: Epoch 69/150
+2021-10-23 19:15:33,571:INFO: loss=0.005, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:15:36,057:INFO: - Val metrics:
+correct_num: 993.000; predict_num: 1146.000; gold_num: 1223.000; precision: 0.866; recall: 0.812; f1: 0.838
+2021-10-23 19:15:41,114:INFO: Epoch 70/150
+2021-10-23 19:20:56,531:INFO: loss=0.008, loss_seq=0.006, loss_mat=0.000, loss_rel=0.002
+2021-10-23 19:20:59,028:INFO: - Val metrics:
+correct_num: 1009.000; predict_num: 1144.000; gold_num: 1223.000; precision: 0.882; recall: 0.825; f1: 0.853
+2021-10-23 19:21:04,175:INFO: Epoch 71/150
+2021-10-23 19:26:20,140:INFO: loss=0.005, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:26:22,630:INFO: - Val metrics:
+correct_num: 1021.000; predict_num: 1165.000; gold_num: 1223.000; precision: 0.876; recall: 0.835; f1: 0.855
+2021-10-23 19:26:27,688:INFO: Epoch 72/150
+2021-10-23 19:31:42,691:INFO: loss=0.006, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:31:45,169:INFO: - Val metrics:
+correct_num: 1017.000; predict_num: 1171.000; gold_num: 1223.000; precision: 0.868; recall: 0.832; f1: 0.850
+2021-10-23 19:31:50,301:INFO: Epoch 73/150
+2021-10-23 19:37:07,513:INFO: loss=0.006, loss_seq=0.005, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:37:10,010:INFO: - Val metrics:
+correct_num: 1034.000; predict_num: 1179.000; gold_num: 1223.000; precision: 0.877; recall: 0.845; f1: 0.861
+2021-10-23 19:37:15,212:INFO: Epoch 74/150
+2021-10-23 19:42:35,698:INFO: loss=0.003, loss_seq=0.003, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:42:38,186:INFO: - Val metrics:
+correct_num: 1042.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.882; recall: 0.852; f1: 0.867
+2021-10-23 19:42:47,276:INFO: - Found new best F1
+2021-10-23 19:42:47,276:INFO: Epoch 75/150
+2021-10-23 19:48:02,245:INFO: loss=0.004, loss_seq=0.003, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:48:04,722:INFO: - Val metrics:
+correct_num: 1027.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.876; recall: 0.840; f1: 0.857
+2021-10-23 19:48:09,847:INFO: Epoch 76/150
+2021-10-23 19:53:25,856:INFO: loss=0.006, loss_seq=0.005, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:53:28,330:INFO: - Val metrics:
+correct_num: 997.000; predict_num: 1142.000; gold_num: 1223.000; precision: 0.873; recall: 0.815; f1: 0.843
+2021-10-23 19:53:33,436:INFO: Epoch 77/150
+2021-10-23 19:58:48,392:INFO: loss=0.004, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 19:58:50,865:INFO: - Val metrics:
+correct_num: 1030.000; predict_num: 1166.000; gold_num: 1223.000; precision: 0.883; recall: 0.842; f1: 0.862
+2021-10-23 19:58:56,018:INFO: Epoch 78/150
+2021-10-23 20:04:12,719:INFO: loss=0.004, loss_seq=0.003, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:04:15,201:INFO: - Val metrics:
+correct_num: 1034.000; predict_num: 1172.000; gold_num: 1223.000; precision: 0.882; recall: 0.845; f1: 0.863
+2021-10-23 20:04:20,316:INFO: Epoch 79/150
+2021-10-23 20:09:35,370:INFO: loss=0.004, loss_seq=0.003, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:09:37,852:INFO: - Val metrics:
+correct_num: 1023.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.872; recall: 0.836; f1: 0.854
+2021-10-23 20:09:42,919:INFO: Epoch 80/150
+2021-10-23 20:14:59,625:INFO: loss=0.005, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:15:02,116:INFO: - Val metrics:
+correct_num: 1021.000; predict_num: 1177.000; gold_num: 1223.000; precision: 0.867; recall: 0.835; f1: 0.851
+2021-10-23 20:15:07,325:INFO: Epoch 81/150
+2021-10-23 20:20:26,513:INFO: loss=0.005, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:20:28,989:INFO: - Val metrics:
+correct_num: 1013.000; predict_num: 1148.000; gold_num: 1223.000; precision: 0.882; recall: 0.828; f1: 0.854
+2021-10-23 20:20:34,113:INFO: Epoch 82/150
+2021-10-23 20:25:49,741:INFO: loss=0.004, loss_seq=0.004, loss_mat=0.000, loss_rel=0.000
+2021-10-23 20:25:52,218:INFO: - Val metrics:
+correct_num: 1053.000; predict_num: 1187.000; gold_num: 1223.000; precision: 0.887; recall: 0.861; f1: 0.874
+2021-10-23 20:26:01,513:INFO: - Found new best F1
+2021-10-23 20:26:01,513:INFO: Epoch 83/150
+2021-10-23 20:31:19,070:INFO: loss=0.003, loss_seq=0.003, loss_mat=0.000, loss_rel=0.000
+2021-10-23 20:31:21,546:INFO: - Val metrics:
+correct_num: 1039.000; predict_num: 1188.000; gold_num: 1223.000; precision: 0.875; recall: 0.850; f1: 0.862
+2021-10-23 20:31:26,673:INFO: Epoch 84/150
+2021-10-23 20:36:41,438:INFO: loss=0.002, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 20:36:43,912:INFO: - Val metrics:
+correct_num: 1031.000; predict_num: 1154.000; gold_num: 1223.000; precision: 0.893; recall: 0.843; f1: 0.867
+2021-10-23 20:36:48,970:INFO: Epoch 85/150
+2021-10-23 20:42:04,459:INFO: loss=0.003, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 20:42:06,931:INFO: - Val metrics:
+correct_num: 1016.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.858; recall: 0.831; f1: 0.844
+2021-10-23 20:42:12,076:INFO: Epoch 86/150
+2021-10-23 20:47:27,028:INFO: loss=0.005, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:47:29,509:INFO: - Val metrics:
+correct_num: 1034.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.875; recall: 0.845; f1: 0.860
+2021-10-23 20:47:34,683:INFO: Epoch 87/150
+2021-10-23 20:52:50,116:INFO: loss=0.003, loss_seq=0.003, loss_mat=0.000, loss_rel=0.001
+2021-10-23 20:52:52,602:INFO: - Val metrics:
+correct_num: 1029.000; predict_num: 1179.000; gold_num: 1223.000; precision: 0.873; recall: 0.841; f1: 0.857
+2021-10-23 20:52:57,894:INFO: Epoch 88/150
+2021-10-23 20:58:17,810:INFO: loss=0.003, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 20:58:20,286:INFO: - Val metrics:
+correct_num: 1031.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.879; recall: 0.843; f1: 0.861
+2021-10-23 20:58:24,946:INFO: Epoch 89/150
+2021-10-23 21:03:40,846:INFO: loss=0.002, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:03:43,335:INFO: - Val metrics:
+correct_num: 1038.000; predict_num: 1162.000; gold_num: 1223.000; precision: 0.893; recall: 0.849; f1: 0.870
+2021-10-23 21:03:48,469:INFO: Epoch 90/150
+2021-10-23 21:09:02,287:INFO: loss=0.002, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:09:04,777:INFO: - Val metrics:
+correct_num: 1052.000; predict_num: 1187.000; gold_num: 1223.000; precision: 0.886; recall: 0.860; f1: 0.873
+2021-10-23 21:09:09,929:INFO: Epoch 91/150
+2021-10-23 21:14:25,022:INFO: loss=0.002, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:14:27,498:INFO: - Val metrics:
+correct_num: 1055.000; predict_num: 1174.000; gold_num: 1223.000; precision: 0.899; recall: 0.863; f1: 0.880
+2021-10-23 21:14:36,949:INFO: - Found new best F1
+2021-10-23 21:14:36,950:INFO: Epoch 92/150
+2021-10-23 21:19:53,200:INFO: loss=0.004, loss_seq=0.004, loss_mat=0.000, loss_rel=0.001
+2021-10-23 21:19:55,673:INFO: - Val metrics:
+correct_num: 1045.000; predict_num: 1175.000; gold_num: 1223.000; precision: 0.889; recall: 0.854; f1: 0.872
+2021-10-23 21:20:00,774:INFO: Epoch 93/150
+2021-10-23 21:25:15,012:INFO: loss=0.002, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:25:17,487:INFO: - Val metrics:
+correct_num: 1052.000; predict_num: 1179.000; gold_num: 1223.000; precision: 0.892; recall: 0.860; f1: 0.876
+2021-10-23 21:25:22,696:INFO: Epoch 94/150
+2021-10-23 21:30:39,707:INFO: loss=0.002, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:30:42,197:INFO: - Val metrics:
+correct_num: 1037.000; predict_num: 1156.000; gold_num: 1223.000; precision: 0.897; recall: 0.848; f1: 0.872
+2021-10-23 21:30:47,436:INFO: Epoch 95/150
+2021-10-23 21:36:07,746:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:36:10,219:INFO: - Val metrics:
+correct_num: 1055.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.894; recall: 0.863; f1: 0.878
+2021-10-23 21:36:15,482:INFO: Epoch 96/150
+2021-10-23 21:41:30,771:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:41:33,244:INFO: - Val metrics:
+correct_num: 1050.000; predict_num: 1177.000; gold_num: 1223.000; precision: 0.892; recall: 0.859; f1: 0.875
+2021-10-23 21:41:38,463:INFO: Epoch 97/150
+2021-10-23 21:46:53,298:INFO: loss=0.002, loss_seq=0.002, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:46:55,774:INFO: - Val metrics:
+correct_num: 1033.000; predict_num: 1174.000; gold_num: 1223.000; precision: 0.880; recall: 0.845; f1: 0.862
+2021-10-23 21:47:00,947:INFO: Epoch 98/150
+2021-10-23 21:52:17,131:INFO: loss=0.002, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:52:19,618:INFO: - Val metrics:
+correct_num: 1048.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.887; recall: 0.857; f1: 0.872
+2021-10-23 21:52:24,713:INFO: Epoch 99/150
+2021-10-23 21:57:39,745:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 21:57:42,224:INFO: - Val metrics:
+correct_num: 1052.000; predict_num: 1170.000; gold_num: 1223.000; precision: 0.899; recall: 0.860; f1: 0.879
+2021-10-23 21:57:47,410:INFO: Epoch 100/150
+2021-10-23 22:03:04,284:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:03:06,761:INFO: - Val metrics:
+correct_num: 1047.000; predict_num: 1168.000; gold_num: 1223.000; precision: 0.896; recall: 0.856; f1: 0.876
+2021-10-23 22:03:11,904:INFO: Epoch 101/150
+2021-10-23 22:08:28,193:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:08:30,683:INFO: - Val metrics:
+correct_num: 1063.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.901; recall: 0.869; f1: 0.885
+2021-10-23 22:08:40,211:INFO: - Found new best F1
+2021-10-23 22:08:40,211:INFO: Epoch 102/150
+2021-10-23 22:13:59,904:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:14:02,384:INFO: - Val metrics:
+correct_num: 1055.000; predict_num: 1197.000; gold_num: 1223.000; precision: 0.881; recall: 0.863; f1: 0.872
+2021-10-23 22:14:07,572:INFO: Epoch 103/150
+2021-10-23 22:19:23,421:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:19:25,896:INFO: - Val metrics:
+correct_num: 1049.000; predict_num: 1179.000; gold_num: 1223.000; precision: 0.890; recall: 0.858; f1: 0.873
+2021-10-23 22:19:31,280:INFO: Epoch 104/150
+2021-10-23 22:24:47,064:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:24:49,539:INFO: - Val metrics:
+correct_num: 1052.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.892; recall: 0.860; f1: 0.876
+2021-10-23 22:24:54,810:INFO: Epoch 105/150
+2021-10-23 22:30:10,212:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:30:12,691:INFO: - Val metrics:
+correct_num: 1056.000; predict_num: 1172.000; gold_num: 1223.000; precision: 0.901; recall: 0.863; f1: 0.882
+2021-10-23 22:30:18,174:INFO: Epoch 106/150
+2021-10-23 22:35:33,197:INFO: loss=0.001, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:35:35,670:INFO: - Val metrics:
+correct_num: 1049.000; predict_num: 1171.000; gold_num: 1223.000; precision: 0.896; recall: 0.858; f1: 0.876
+2021-10-23 22:35:40,994:INFO: Epoch 107/150
+2021-10-23 22:40:57,228:INFO: loss=0.001, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:40:59,702:INFO: - Val metrics:
+correct_num: 1059.000; predict_num: 1187.000; gold_num: 1223.000; precision: 0.892; recall: 0.866; f1: 0.879
+2021-10-23 22:41:05,087:INFO: Epoch 108/150
+2021-10-23 22:46:21,669:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:46:24,161:INFO: - Val metrics:
+correct_num: 1052.000; predict_num: 1172.000; gold_num: 1223.000; precision: 0.898; recall: 0.860; f1: 0.878
+2021-10-23 22:46:29,613:INFO: Epoch 109/150
+2021-10-23 22:51:48,774:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:51:51,250:INFO: - Val metrics:
+correct_num: 1053.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.898; recall: 0.861; f1: 0.879
+2021-10-23 22:51:56,638:INFO: Epoch 110/150
+2021-10-23 22:57:13,020:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 22:57:15,495:INFO: - Val metrics:
+correct_num: 1055.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.894; recall: 0.863; f1: 0.878
+2021-10-23 22:57:20,848:INFO: Epoch 111/150
+2021-10-23 23:02:36,012:INFO: loss=0.001, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:02:38,490:INFO: - Val metrics:
+correct_num: 1061.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.898; recall: 0.868; f1: 0.883
+2021-10-23 23:02:43,849:INFO: Epoch 112/150
+2021-10-23 23:07:59,575:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:08:02,050:INFO: - Val metrics:
+correct_num: 1047.000; predict_num: 1166.000; gold_num: 1223.000; precision: 0.898; recall: 0.856; f1: 0.877
+2021-10-23 23:08:07,214:INFO: Epoch 113/150
+2021-10-23 23:13:22,349:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:13:24,828:INFO: - Val metrics:
+correct_num: 1062.000; predict_num: 1192.000; gold_num: 1223.000; precision: 0.891; recall: 0.868; f1: 0.880
+2021-10-23 23:13:30,013:INFO: Epoch 114/150
+2021-10-23 23:18:44,716:INFO: loss=0.001, loss_seq=0.001, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:18:47,191:INFO: - Val metrics:
+correct_num: 1055.000; predict_num: 1173.000; gold_num: 1223.000; precision: 0.899; recall: 0.863; f1: 0.881
+2021-10-23 23:18:52,463:INFO: Epoch 115/150
+2021-10-23 23:24:08,211:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:24:10,698:INFO: - Val metrics:
+correct_num: 1059.000; predict_num: 1191.000; gold_num: 1223.000; precision: 0.889; recall: 0.866; f1: 0.877
+2021-10-23 23:24:15,986:INFO: Epoch 116/150
+2021-10-23 23:29:36,692:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:29:39,167:INFO: - Val metrics:
+correct_num: 1065.000; predict_num: 1190.000; gold_num: 1223.000; precision: 0.895; recall: 0.871; f1: 0.883
+2021-10-23 23:29:44,000:INFO: Epoch 117/150
+2021-10-23 23:34:59,267:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:35:01,742:INFO: - Val metrics:
+correct_num: 1066.000; predict_num: 1194.000; gold_num: 1223.000; precision: 0.893; recall: 0.872; f1: 0.882
+2021-10-23 23:35:06,894:INFO: Epoch 118/150
+2021-10-23 23:40:22,867:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:40:25,342:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1188.000; gold_num: 1223.000; precision: 0.899; recall: 0.873; f1: 0.886
+2021-10-23 23:40:35,119:INFO: - Found new best F1
+2021-10-23 23:40:35,119:INFO: Epoch 119/150
+2021-10-23 23:45:50,656:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:45:53,130:INFO: - Val metrics:
+correct_num: 1071.000; predict_num: 1189.000; gold_num: 1223.000; precision: 0.901; recall: 0.876; f1: 0.888
+2021-10-23 23:46:02,867:INFO: - Found new best F1
+2021-10-23 23:46:02,868:INFO: Epoch 120/150
+2021-10-23 23:51:17,717:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:51:20,193:INFO: - Val metrics:
+correct_num: 1070.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.907; recall: 0.875; f1: 0.891
+2021-10-23 23:51:29,808:INFO: - Found new best F1
+2021-10-23 23:51:29,808:INFO: Epoch 121/150
+2021-10-23 23:56:44,393:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-23 23:56:46,866:INFO: - Val metrics:
+correct_num: 1070.000; predict_num: 1178.000; gold_num: 1223.000; precision: 0.908; recall: 0.875; f1: 0.891
+2021-10-23 23:56:56,554:INFO: - Found new best F1
+2021-10-23 23:56:56,554:INFO: Epoch 122/150
+2021-10-24 00:02:12,831:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:02:15,317:INFO: - Val metrics:
+correct_num: 1065.000; predict_num: 1190.000; gold_num: 1223.000; precision: 0.895; recall: 0.871; f1: 0.883
+2021-10-24 00:02:20,695:INFO: Epoch 123/150
+2021-10-24 00:07:39,464:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:07:41,936:INFO: - Val metrics:
+correct_num: 1076.000; predict_num: 1201.000; gold_num: 1223.000; precision: 0.896; recall: 0.880; f1: 0.888
+2021-10-24 00:07:47,260:INFO: Epoch 124/150
+2021-10-24 00:13:02,001:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:13:04,475:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1192.000; gold_num: 1223.000; precision: 0.896; recall: 0.873; f1: 0.884
+2021-10-24 00:13:09,555:INFO: Epoch 125/150
+2021-10-24 00:18:24,937:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:18:27,413:INFO: - Val metrics:
+correct_num: 1071.000; predict_num: 1195.000; gold_num: 1223.000; precision: 0.896; recall: 0.876; f1: 0.886
+2021-10-24 00:18:32,558:INFO: Epoch 126/150
+2021-10-24 00:23:47,583:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:23:50,057:INFO: - Val metrics:
+correct_num: 1076.000; predict_num: 1200.000; gold_num: 1223.000; precision: 0.897; recall: 0.880; f1: 0.888
+2021-10-24 00:23:55,215:INFO: Epoch 127/150
+2021-10-24 00:29:09,553:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:29:12,033:INFO: - Val metrics:
+correct_num: 1067.000; predict_num: 1190.000; gold_num: 1223.000; precision: 0.897; recall: 0.872; f1: 0.884
+2021-10-24 00:29:17,227:INFO: Epoch 128/150
+2021-10-24 00:34:33,152:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:34:35,626:INFO: - Val metrics:
+correct_num: 1067.000; predict_num: 1185.000; gold_num: 1223.000; precision: 0.900; recall: 0.872; f1: 0.886
+2021-10-24 00:34:40,702:INFO: Epoch 129/150
+2021-10-24 00:39:56,152:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:39:58,645:INFO: - Val metrics:
+correct_num: 1069.000; predict_num: 1186.000; gold_num: 1223.000; precision: 0.901; recall: 0.874; f1: 0.888
+2021-10-24 00:40:04,034:INFO: Epoch 130/150
+2021-10-24 00:45:24,188:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:45:26,661:INFO: - Val metrics:
+correct_num: 1072.000; predict_num: 1187.000; gold_num: 1223.000; precision: 0.903; recall: 0.877; f1: 0.890
+2021-10-24 00:45:31,815:INFO: Epoch 131/150
+2021-10-24 00:50:47,687:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:50:50,162:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.888
+2021-10-24 00:50:55,251:INFO: Epoch 132/150
+2021-10-24 00:56:10,419:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 00:56:12,889:INFO: - Val metrics:
+correct_num: 1064.000; predict_num: 1176.000; gold_num: 1223.000; precision: 0.905; recall: 0.870; f1: 0.887
+2021-10-24 00:56:18,056:INFO: Epoch 133/150
+2021-10-24 01:01:34,022:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:01:36,492:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.902; recall: 0.873; f1: 0.887
+2021-10-24 01:01:41,652:INFO: Epoch 134/150
+2021-10-24 01:06:56,938:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:06:59,410:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1189.000; gold_num: 1223.000; precision: 0.898; recall: 0.873; f1: 0.886
+2021-10-24 01:07:04,527:INFO: Epoch 135/150
+2021-10-24 01:12:19,834:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:12:22,307:INFO: - Val metrics:
+correct_num: 1066.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.902; recall: 0.872; f1: 0.886
+2021-10-24 01:12:27,444:INFO: Epoch 136/150
+2021-10-24 01:17:43,631:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:17:46,121:INFO: - Val metrics:
+correct_num: 1064.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.900; recall: 0.870; f1: 0.885
+2021-10-24 01:17:51,528:INFO: Epoch 137/150
+2021-10-24 01:23:11,757:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:23:14,229:INFO: - Val metrics:
+correct_num: 1063.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.901; recall: 0.869; f1: 0.885
+2021-10-24 01:23:19,340:INFO: Epoch 138/150
+2021-10-24 01:28:34,717:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:28:37,189:INFO: - Val metrics:
+correct_num: 1066.000; predict_num: 1178.000; gold_num: 1223.000; precision: 0.905; recall: 0.872; f1: 0.888
+2021-10-24 01:28:42,331:INFO: Epoch 139/150
+2021-10-24 01:33:58,511:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:34:00,983:INFO: - Val metrics:
+correct_num: 1067.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.903; recall: 0.872; f1: 0.888
+2021-10-24 01:34:06,144:INFO: Epoch 140/150
+2021-10-24 01:39:22,162:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:39:24,726:INFO: - Val metrics:
+correct_num: 1067.000; predict_num: 1180.000; gold_num: 1223.000; precision: 0.904; recall: 0.872; f1: 0.888
+2021-10-24 01:39:29,860:INFO: Epoch 141/150
+2021-10-24 01:44:45,155:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:44:47,630:INFO: - Val metrics:
+correct_num: 1069.000; predict_num: 1186.000; gold_num: 1223.000; precision: 0.901; recall: 0.874; f1: 0.888
+2021-10-24 01:44:52,759:INFO: Epoch 142/150
+2021-10-24 01:50:08,046:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:50:10,517:INFO: - Val metrics:
+correct_num: 1069.000; predict_num: 1184.000; gold_num: 1223.000; precision: 0.903; recall: 0.874; f1: 0.888
+2021-10-24 01:50:15,616:INFO: Epoch 143/150
+2021-10-24 01:55:32,782:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 01:55:35,267:INFO: - Val metrics:
+correct_num: 1067.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.903; recall: 0.872; f1: 0.888
+2021-10-24 01:55:40,499:INFO: Epoch 144/150
+2021-10-24 02:01:00,175:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:01:02,651:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.889
+2021-10-24 02:01:07,768:INFO: Epoch 145/150
+2021-10-24 02:06:22,976:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:06:25,449:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1183.000; gold_num: 1223.000; precision: 0.903; recall: 0.873; f1: 0.888
+2021-10-24 02:06:30,545:INFO: Epoch 146/150
+2021-10-24 02:11:45,925:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:11:48,399:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1182.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.888
+2021-10-24 02:11:53,603:INFO: Epoch 147/150
+2021-10-24 02:17:08,737:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:17:11,212:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.889
+2021-10-24 02:17:16,376:INFO: Epoch 148/150
+2021-10-24 02:22:31,347:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:22:33,821:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.889
+2021-10-24 02:22:38,981:INFO: Epoch 149/150
+2021-10-24 02:27:55,070:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:27:57,542:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.889
+2021-10-24 02:28:02,658:INFO: Epoch 150/150
+2021-10-24 02:33:18,269:INFO: loss=0.000, loss_seq=0.000, loss_mat=0.000, loss_rel=0.000
+2021-10-24 02:33:20,757:INFO: - Val metrics:
+correct_num: 1068.000; predict_num: 1181.000; gold_num: 1223.000; precision: 0.904; recall: 0.873; f1: 0.889
+2021-10-24 02:33:26,059:WARNING: Best val f1: 0.8912952936276552
+2021-10-24 02:33:29,468:INFO: - test metrics:
+correct_num: 1384.000; predict_num: 1544.000; gold_num: 1607.000; precision: 0.896; recall: 0.861; f1: 0.878
+2021-10-24 02:33:29,471:INFO: 
+
+Test in TestSet:
+
+2021-10-24 02:33:29,471:INFO: correct_num: 1384.000; predict_num: 1544.000; gold_num: 1607.000; precision: 0.896; recall: 0.861; f1: 0.878
+2021-10-24 02:33:29,492:INFO: -done

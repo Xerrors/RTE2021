@@ -1,0 +1,73 @@
+2021-10-20 20:02:05,787:INFO: 
+Running with the following configs:
+ >> seed : 2021
+ >> ex_index : deafult
+ >> corpus_type : WebNLG
+ >> device_id : 0
+ >> epoch_num : 10
+ >> multi_gpu : False
+ >> restore_file : None
+ >> corres_threshold : 0.5
+ >> rel_threshold : 0.5
+ >> emb_fusion : concat
+ >> ensure_cross : none
+ >> ensure_rel : default
+ >> ensure_corres : default
+ >> use_symmetries : none
+ >> sent_rels : none
+ >> sent_attn : none
+ >> num_negs : 4
+
+
+2021-10-20 20:02:05,787:INFO: Params: 
+ >> bert_model_dir: ../Bert/bert-base-cased
+ >> n_gpu: 2
+ >> max_seq_length: 100
+ >> data_cache: False
+ >> train_batch_size: 6
+ >> val_batch_size: 24
+ >> test_batch_size: 64
+ >> seq_tag_size: 3
+ >> rel_num: 216
+ >> min_epoch_num: 20
+ >> patience: 1e-05
+ >> patience_num: 100
+ >> fin_tuning_lr: 0.0001
+ >> downs_en_lr: 0.001
+ >> clip_grad: 2.0
+ >> drop_prob: 0.3
+ >> weight_decay_rate: 0.01
+ >> warmup_prop: 0.1
+ >> gradient_accumulation_steps: 2
+
+2021-10-20 20:02:05,788:INFO: Model type:
+2021-10-20 20:02:05,788:INFO: device: cuda
+2021-10-20 20:02:05,788:INFO: Load pre-train model weights...
+2021-10-20 20:02:06,678:INFO: -done
+2021-10-20 20:02:06,678:INFO: Starting training for 10 epoch(s)
+2021-10-20 20:02:13,137:INFO: Epoch 1/10
+2021-10-20 20:06:48,698:INFO: loss=0.229, loss_seq=0.154, loss_mat=0.016, loss_rel=0.059
+2021-10-20 20:06:49,828:INFO: - Val metrics:
+correct_num: 436.000; predict_num: 618.000; gold_num: 1223.000; precision: 0.706; recall: 0.357; f1: 0.474
+2021-10-20 20:06:58,937:INFO: - Found new best F1
+2021-10-20 20:06:58,937:INFO: Epoch 2/10
+2021-10-20 20:11:33,766:INFO: loss=0.083, loss_seq=0.064, loss_mat=0.003, loss_rel=0.016
+2021-10-20 20:11:34,893:INFO: - Val metrics:
+correct_num: 665.000; predict_num: 1017.000; gold_num: 1223.000; precision: 0.654; recall: 0.544; f1: 0.594
+2021-10-20 20:11:44,214:INFO: - Found new best F1
+2021-10-20 20:11:44,215:INFO: Epoch 3/10
+2021-10-20 20:16:18,531:INFO: loss=0.056, loss_seq=0.044, loss_mat=0.002, loss_rel=0.010
+2021-10-20 20:16:19,695:INFO: - Val metrics:
+correct_num: 764.000; predict_num: 1070.000; gold_num: 1223.000; precision: 0.714; recall: 0.625; f1: 0.666
+2021-10-20 20:16:28,524:INFO: - Found new best F1
+2021-10-20 20:16:28,524:INFO: Epoch 4/10
+2021-10-20 20:21:02,489:INFO: loss=0.038, loss_seq=0.030, loss_mat=0.001, loss_rel=0.007
+2021-10-20 20:21:03,628:INFO: - Val metrics:
+correct_num: 872.000; predict_num: 1148.000; gold_num: 1223.000; precision: 0.760; recall: 0.713; f1: 0.736
+2021-10-20 20:21:12,674:INFO: - Found new best F1
+2021-10-20 20:21:12,674:INFO: Epoch 5/10
+2021-10-20 20:25:48,598:INFO: loss=0.027, loss_seq=0.020, loss_mat=0.001, loss_rel=0.005
+2021-10-20 20:25:49,751:INFO: - Val metrics:
+correct_num: 915.000; predict_num: 1147.000; gold_num: 1223.000; precision: 0.798; recall: 0.748; f1: 0.772
+2021-10-20 20:25:58,736:INFO: - Found new best F1
+2021-10-20 20:25:58,737:INFO: Epoch 6/10

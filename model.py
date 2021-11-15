@@ -6,6 +6,8 @@ from collections import Counter
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn.modules.dropout import Dropout
+from torch.nn.modules.normalization import LayerNorm
 from transformers import BertModel
 from components import HGAT, cross_conv, MultiheadAttention
 
@@ -103,6 +105,17 @@ class BertForRE(nn.Module):
             self.drop_dim_21 = nn.Linear(config.hidden_size * 2, config.hidden_size)
             self.FFNN = nn.Linear(config.hidden_size, config.hidden_size)
 
+        if ex_params['sent_rels'] == 'global2':
+            self.sent_global_attention = MultiheadAttention(config.hidden_size, 8, dropout=params.drop_prob, batch_first=True)
+            self.drop_dim_21 = nn.Linear(config.hidden_size * 2, config.hidden_size)
+            self.FFNN = nn.Linear(config.hidden_size, config.hidden_size)
+            self.FFNN2 = nn.Linear(config.hidden_size, config.hidden_size)
+            self.dropout1 = nn.Dropout(params.drop_prob)
+            self.dropout2 = nn.Dropout(params.drop_prob)
+            self.dropout3 = nn.Dropout(params.drop_prob)
+            self.norm1 = nn.LayerNorm(config.hidden_size)
+            self.norm2 = nn.LayerNorm(config.hidden_size)
+
         self.global_corres = MultiNonLinearClassifier(config.hidden_size * 2, 1, params.drop_prob)
         # relation judgement
         self.rel_judgement = MultiNonLinearClassifier(config.hidden_size, params.rel_num, params.drop_prob)
@@ -187,6 +200,21 @@ class BertForRE(nn.Module):
                 seq_attn = self.sent_global_attention(corres_pred.view(bs, seq_len*seq_len, h), sequence_output, sequence_output)
                 seq_attn = nn.ReLU()(self.FFNN(seq_attn))
                 corres_pred = torch.cat([corres_pred, seq_attn.view(bs, seq_len, seq_len, h)], 3)
+
+            elif ex_params['sent_rels'] == 'global2':
+                corres_pred = nn.ReLU()(self.drop_dim_21(corres_pred))
+                x = corres_pred.view(bs, seq_len*seq_len, h)
+
+                attn = self.dropout3(
+                    self.sent_global_attention(
+                        x,
+                        sequence_output,
+                        sequence_output))
+                x = self.norm1(x + attn)
+                ff = self.dropout2(self.FFNN2(self.dropout1(nn.ReLU()(self.FFNN(x)))))
+                x = self.norm2(x + ff)
+
+                corres_pred = torch.cat([corres_pred, x.view(bs, seq_len, seq_len, h)], 3)
 
             elif ex_params['sent_rels'] == 'contextual':
                 logging.warning("Empty for this option '{}', and we will continue running with default setting('{}')".format(ex_params['sent_rels'], "none"))

@@ -44,6 +44,8 @@ parser.add_argument('--sent_rels', type=str, default='none', help="sentense rela
 parser.add_argument('--sent_attn', type=str, default='none', help="sentense attention, ['none'(default)]")
 parser.add_argument('--cross_data', type=int, default=0, help="Extract implied relation")
 
+parser.add_argument('--use_feature_enchanced', action='store_true', help="use MLP to enchancing feature representation of subject and object")
+
 
 parser.add_argument('--num_negs', type=int, default=4,
                     help="number of negative sample when ablate relation judgement")

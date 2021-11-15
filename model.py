@@ -189,10 +189,11 @@ class BertForRE(nn.Module):
         if ensure_corres == 'default':
             # for every position $i$ in sequence, should concate $j$ to predict.
             if ex_params['use_feature_enchanced']:
-                sub_extend = nn.ELU()(self.Lr_e1(sequence_output))
-                obj_extend = nn.ELU()(self.Lr_e2(sequence_output))
-            sub_extend = sub_extend.unsqueeze(2).expand(-1, -1, seq_len, -1)  # (bs, s, s, h)
-            obj_extend = obj_extend.unsqueeze(1).expand(-1, seq_len, -1, -1)  # (bs, s, s, h)
+                sub_extend = nn.ELU()(self.Lr_e1(sequence_output)).unsqueeze(2).expand(-1, -1, seq_len, -1)  # (bs, s, s, h)
+                obj_extend = nn.ELU()(self.Lr_e2(sequence_output)).unsqueeze(1).expand(-1, seq_len, -1, -1)  # (bs, s, s, h)
+            else:
+                sub_extend = sequence_output
+                obj_extend = sequence_output
 
             # if ex_params['sent_attn'] == 'span':
             #     self.sent_attention(sub_extend.unsqueeze(0))

@@ -112,7 +112,7 @@ class CustomDataLoader(object):
         if data_sign == "train":
             datasampler = RandomSampler(dataset)
             dataloader = DataLoader(dataset, sampler=datasampler, batch_size=self.train_batch_size,
-                                    collate_fn=self.collate_fn_train)
+                                    collate_fn=self.collate_fn_train, pin_memory=True)
         elif data_sign == "val":
             datasampler = SequentialSampler(dataset)
             dataloader = DataLoader(dataset, sampler=datasampler, batch_size=self.val_batch_size,

@@ -25,7 +25,7 @@ import pandas as pd
 # load args
 parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=2021, help="random seed for initialization")
-parser.add_argument('--ex_index', type=str, default="deafult")
+parser.add_argument('--ex_index', type=str, default="default")
 parser.add_argument('--corpus_type', type=str, default="WebNLG", help="NYT, WebNLG, NYT*, WebNLG*")
 parser.add_argument('--device_id', type=int, default=0, help="GPU index")
 parser.add_argument('--epoch_num', type=int, default=10, help="number of epochs")

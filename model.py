@@ -115,6 +115,11 @@ class BertForRE(nn.Module):
             self.dropout3 = nn.Dropout(params.drop_prob)
             self.norm1 = nn.LayerNorm(config.hidden_size)
             self.norm2 = nn.LayerNorm(config.hidden_size)
+        
+        # https://github.com/neukg/GRTE/blob/main/model.py#L62 2021.11.15
+        if ex_params['use_feature_enchanced']:
+            self.Lr_e1=nn.Linear(config.hidden_size,config.hidden_size)
+            self.Lr_e2=nn.Linear(config.hidden_size,config.hidden_size)
 
         self.global_corres = MultiNonLinearClassifier(config.hidden_size * 2, 1, params.drop_prob)
         # relation judgement
@@ -183,8 +188,11 @@ class BertForRE(nn.Module):
         # before fuse relation representation
         if ensure_corres == 'default':
             # for every position $i$ in sequence, should concate $j$ to predict.
-            sub_extend = sequence_output.unsqueeze(2).expand(-1, -1, seq_len, -1)  # (bs, s, s, h)
-            obj_extend = sequence_output.unsqueeze(1).expand(-1, seq_len, -1, -1)  # (bs, s, s, h)
+            if ex_params['use_feature_enchanced']:
+                sub_extend = nn.ELU()(self.Lr_e1(sequence_output))
+                obj_extend = nn.ELU()(self.Lr_e2(sequence_output))
+            sub_extend = sub_extend.unsqueeze(2).expand(-1, -1, seq_len, -1)  # (bs, s, s, h)
+            obj_extend = obj_extend.unsqueeze(1).expand(-1, seq_len, -1, -1)  # (bs, s, s, h)
 
             # if ex_params['sent_attn'] == 'span':
             #     self.sent_attention(sub_extend.unsqueeze(0))
